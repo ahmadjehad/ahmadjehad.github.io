@@ -1,12 +1,12 @@
 <template>
-  <NavBar />
-  <router-view />
+ <navArea/>
+  <router-view/>
 </template>
 <script>
-import NavBar from "./components/NavBar.vue";
+import navArea from './components/NavArea.vue'
 export default {
-  components: { NavBar },
-};
+  components:{navArea}
+}
 </script>
 <style>
 #app {
@@ -15,4 +15,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
 </style>
