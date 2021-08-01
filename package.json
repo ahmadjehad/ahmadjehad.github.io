@@ -1,16 +1,18 @@
 {
-  "name": "portofolio",
+  "name": "DevAceSoftware",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "g": "^2.0.1",
     "gh-pages": "^3.1.0",
     "vue": "^3.0.0",
+    "vue-cli": "^2.9.6",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
