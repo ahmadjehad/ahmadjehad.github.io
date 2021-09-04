@@ -2,154 +2,185 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1</title>
-    <style >
-        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
-      body{
-        padding: 0px;
-        margin: 0px;
-      }
-.wrapper{
-  display: flex;
-  flex-direction: column;
-}  
-.header{
-    order: 1;
-  flex-direction: row;
-  padding: 20px;
-  flex-basis:100%;
-  text-align: center;
-  background-color: steelblue;
-}
-.header a{
-    color: white;
-  font-family: 'ZCOOL KuaiLe', cursive;
-  margin: 0px 10px;
-  font-size: 25px;
-  text-decoration: none;
-}
-.header a:hover{
-  font-size: 26px;
-  border: 1px solid black;
-  color: black;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
-.main{
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmir-s3-cdn-cf.behance.net%2Fproject_modules%2F1400%2Ff200487534919.560ad19bbba79.jpg&f=1&nofb=1");
-  order: 2;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: auto;
-  margin: 0 ;
-  background-color: brown;
-  flex-direction: column;
-}
-form{
-display: flex;
-flex-direction: column;
+    body {
+      padding: 0px;
+      margin: 0px;
+    }
 
-  text-align:center ;
-  background-color: rgb(30, 127, 156);
- border-radius: 10px;
- color: white;
- padding: 2% 5%;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+    }
 
- margin: 2% 25%;
-}
-.footer{
-  font-family: 'ZCOOL KuaiLe', cursive;
+    * {
+      list-style-type: none;
+    }
 
-  order: 3;
-  flex-direction: row;
-  flex-basis: 100%;
-  text-align: center;
-  color: white;
-  background-color: steelblue;
-}
-.footer .copyright a{
- color: white;
-    text-decoration: none;
+    .header {
+      order: 1;
+      flex-direction: row;
+      padding: 20px;
+      flex-basis: 100%;
+      text-align: center;
+      background-color: steelblue;
+    }
 
-}
-.footer a:hover{
-    color: black;
-}
+    .header a {
+      color: white;
+      font-family: 'ZCOOL KuaiLe', cursive;
+      margin: 0px 10px;
+      font-size: 25px;
+      text-decoration: none;
+    }
 
+    .header a:hover {
+      font-size: 26px;
+      border: 1px solid black;
+      color: black;
+    }
 
-</style>
+    .main {
+      background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmir-s3-cdn-cf.behance.net%2Fproject_modules%2F1400%2Ff200487534919.560ad19bbba79.jpg&f=1&nofb=1");
+      order: 2;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: auto;
+      margin: 0;
+      background-color: brown;
+      flex-direction: column;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      text-align: center;
+      background-color: rgb(30, 127, 156);
+      border-radius: 10px;
+      color: white;
+      padding: 2% 5%;
+
+      margin: 2% 25%;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border-radius: 13px;
+    }
+
+    .column {
+      display: flex;
+      margin: 10px;
+      flex-direction: column;
+    }
+
+    .footer {
+      font-family: 'ZCOOL KuaiLe', cursive;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      order: 3;
+      flex-basis: 100%;
+      text-align: center;
+      color: white;
+      background-color: steelblue;
+    }
+
+    .footer .copyright a {
+      flex-basis: 100%;
+      order: 4;
+      color: white;
+      text-decoration: none;
+
+    }
+
+    .footer a:hover {
+      color: black;
+    }
+  </style>
 </head>
+
 <body>
-<div class="wrapper">
-<header class="header">
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Job Application</a>
-    <a href="#">Contact Us</a>
-  </nav>
-</header>
-<main class="main">
-    <form action="#" method="POST">
+  <div class="wrapper">
+    <header class="header">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Job Application</a>
+        <a href="#">Contact Us</a>
+      </nav>
+    </header>
+    <main class="main">
+      <form action="#" method="POST">
         <label>First Name</label>
         <input type="text" name="firstName" required>
         <br><label>Last Name</label>
         <input type="text" name="lastName" required>
-       <br> <label>Email</label>
+        <br> <label>Email</label>
         <input type="email" name="email">
         <br><label>Phone</label>
         <input name="phone" type="tel" required>
-     <br>   <label>Bachelor’s Certificate</label>
+        <br> <label>Bachelor’s Certificate</label>
         <input type="file" name="bachelorCertificates" multiple="multiple" required />
-       <br> <label>Start Date</label>
+        <br> <label>Start Date</label>
         <input type="date" name="startDate" required>
-       <br> <label>Graduation Date</label>
+        <br> <label>Graduation Date</label>
         <input type="date" name="graduationDate" required>
-       <br> <label>Upload CV</label>
+        <br> <label>Upload CV</label>
         <input type="file" name="cv" multiple="multiple" required />
-       <br> <label>Upload Personal Photo</label>
+        <br> <label>Upload Personal Photo</label>
         <input type="file" name="personalPhoto" multiple="multiple" required />
-       <br> <label>Certificates</label>
+        <br> <label>Certificates</label>
         <textarea name="certificates" required></textarea>
-       <br> <input type="checkbox" name="agreement" value="agreement" required> I agree to the terms and
-        conditions.
+        <br> <input type="checkbox" name="agreement" value="agreement" required>I agree to the terms and conditions.
 
-
-       <br> <input type="submit" value="Submit">
-    </form>
-</main>
-<footer class="footer">
-  <div class="flexContainer">
-    <div class="column">
-    <h3>Location</h3>
-    <ul>
-    <li>Tahaluf Restaurant</li>
-    <li>Irbid,Jordan</li>
-    </ul>
-    </div>
-        <div class="infogroup">
-
-    <h6>Quick Links</h6>
-    <ul class="footer-links">
-        <a href="https://devace.software">About Us</a>
-        <a href="https://devace.software">Contact Us</a>
-        <a href="https://devace.software">Contribute</a>
-       
-    </ul>
-    </div>
-    <div class="infogroup">
-
-    <h6>Contact Us</h6>
-    <a class="footer-links">
-        <a href="mailto:contact@devace.software"><p>Email: contact@devace.software</p></a>
-        <a href="tel:+962787244072"><p>Phone: +962787244072</p></a>
-
-  </div>
-      <div class="copyright">
-          <p>&copy <a href="https://devace.software">Dev Ace Software</a> 2021</p>
+        <br>
+        <br> <input type="submit" value="Submit">
+      </form>
+    </main>
+    <footer class="footer">
+      <div class="column">
+        <h3>Location</h3>
+        <ul>
+          <li>Dev Ace Software</li>
+          <li>Jordan</li>
+        </ul>
       </div>
-</footer>
-</div>
+
+      <div class="column">
+
+        <h3>Quick Links</h3>
+
+        <a href="https://devace.software">About Us</a><br>
+        <a href="https://devace.software">Contact Us</a><br>
+        <a href="https://devace.software">Contribute</a>
+
+
+      </div>
+
+      <div class="column">
+
+        <h3>Contact Us</h3>
+
+        <a href="mailto:contact@devace.software">
+          <p>Email: contact@devace.software</p>
+        </a>
+        <a href="tel:+962787244072">
+          <p>Phone: +962787244072</p>
+      </div>
+
+      <div class="copyright">
+        <p>&copy <a href="https://devace.software">Dev Ace Software</a> 2021</p>
+      </div>
+    </footer>
+  </div>
 </body>
+
 </html>
