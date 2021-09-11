@@ -77,10 +77,11 @@ function addQuestions(quseionNumber) {
             realAnswer = firstNumber / secondNumber;
             break;
     }
-
+    
         let quesion = document.createElement("div");
         quesion.innerHTML = '<div class="m-2"><label class="form-label">Q' + q + ')  ' +firstNumber+' '+mathOperation+' '+secondNumber+'</label><input type="text"class="form-control" name="answer" id="' + q + '" placeholder="put your answer here"></div>';
         quesionsForm.appendChild(quesion);
+
     }    
     let btn = document.createElement("div");
     btn.innerHTML='<button onClick="checkGrade()" type="submit" class="m-3 p-2 btn btn-success">Submit Answers</button>';
