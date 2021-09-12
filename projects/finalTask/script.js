@@ -52,40 +52,50 @@ document.getElementById("name").textContent = 'Name: ' + username;
 document.getElementById("age").textContent = 'Age: ' + age;
 document.getElementById("level").textContent = 'Level: ' + level;
 
+var realAnswers=[];
+
 //LEVEL DESIGN
 function addQuestions(quseionNumber) {
     
     for (let q = 1; q <= quseionNumber; q++) {
-        var firstNumber = getRandomInt(10);
+    var firstNumber = getRandomInt(10);
     var secondNumber = getRandomInt(10) + 1;
     var realAnswer;
     switch (getRandomInt(4) + 1) {
         case 1:
             mathOperation = '+';
             realAnswer = firstNumber + secondNumber;
+            realAnswers.push(realAnswer);
             break;
         case 2:
             mathOperation = '-';
             realAnswer = firstNumber - secondNumber;
+            realAnswers.push(realAnswer);
             break;
         case 3:
             mathOperation = '*';
             realAnswer = firstNumber * secondNumber;
+            realAnswers.push(realAnswer);
             break;
         case 4:
             mathOperation = '/';
             realAnswer = firstNumber / secondNumber;
+            realAnswers.push(realAnswer);
             break;
     }
     
         let quesion = document.createElement("div");
-        quesion.innerHTML = '<div class="m-2"><label class="form-label">Q' + q + ')  ' +firstNumber+' '+mathOperation+' '+secondNumber+'</label><input type="text"class="form-control" name="answer" id="' + q + '" placeholder="put your answer here"></div>';
+        quesion.innerHTML = '<div class="m-2"><label class="form-label">Q' + q + ')  ' +firstNumber+' '+mathOperation+' '+secondNumber+'</label><input type="text"class="form-control"  id="q' + q + '" placeholder="put your answer here"></div>';
         quesionsForm.appendChild(quesion);
 
     }    
     let btn = document.createElement("div");
-    btn.innerHTML='<button onClick="checkGrade()" type="submit" class="m-3 p-2 btn btn-success">Submit Answers</button>';
+    btn.innerHTML='<div onClick="checkGrade()" class="m-2 p-2 btn btn-success">Submit Answers</div>';
+    let resetbtn = document.createElement("div");
+    resetbtn.innerHTML='<button type="reset" class="m-2 p-2 btn btn-danger">Try Again!</button>';
+   
     quesionsForm.appendChild(btn);
+    quesionsForm.appendChild(resetbtn);
    
 }
 const quesionsForm = document.getElementById("levelQusetions");
@@ -101,13 +111,61 @@ else if (level == "Intermediate level") {
 else if (level == "Hard level") {
     addQuestions(25);
 }
-
 function checkGrade() {
-    if(levelScore>=7)
-    {
-        //pass - show animation and play success sound
+    
+for (let index = 0; index < realAnswers.length; index++) {
+var userAnswer=document.getElementById('q'+(index+1)).value;
+
+    if (userAnswer==realAnswers[index]) {
+        levelScore+=2;
     }
-    else{
-        //fails - show animation and play fail sound
+}
+
+    if (level == "Easy level") {
+        if(levelScore>=7)
+        {
+            var sSound=document.getElementById("success");
+            sSound.play();
+            alert("You Passed, Level Score: "+levelScore);
+           
+        }
+        else{
+            var fSound=document.getElementById("fails");
+            fSound.play();
+            alert("You Failed, Level Score: "+levelScore+"\nYou should at least get 7 to pass");
+    
+        }
     }
+    else if (level == "Intermediate level") {
+        if(levelScore>=15)
+        {
+            var sSound=document.getElementById("success");
+            sSound.play();
+            alert("You Passed, Level Score: "+levelScore);
+           
+        }
+        else{
+            var fSound=document.getElementById("fails");
+            fSound.play();
+            alert("You Failed, Level Score: "+levelScore+"\nYou should at least get 15 to pass");
+    
+        }
+    }
+    else if (level == "Hard level") {
+        if(levelScore>=45)
+        {
+            var sSound=document.getElementById("success");
+            sSound.play();
+            alert("You Passed, Level Score: "+levelScore);
+           
+        }
+        else{
+            var fSound=document.getElementById("fails");
+            fSound.play();
+            alert("You Failed, Level Score: "+levelScore+"\nYou should at least get 45 to pass");
+    
+        }
+    }
+   
+    levelScore=0;
 }
